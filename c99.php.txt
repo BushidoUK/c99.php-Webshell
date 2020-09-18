@@ -1,0 +1,4699 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!--
+
+	Looking at the source, huh? Maybe you aren't completely stupid, after all! 
+
+	But this is just a mock-up, you're wasting you're time here. Good gag, though, eh! ;o)
+
+
+
+	..
+
+
+
+	Since creating this, I've had way too many emails asking how I did it, or more usually,
+
+	can I send you a copy of mine. No! That won't work! It will look like it's running on
+
+	MY site, and that's not gonna fool anyone, well most people.
+
+
+
+	To make your own, simply drop a REAL c99.php on your site somewhere (or your development
+
+	mirror, at home) and then, in your browser, save that rendered page to your hard drive.
+
+
+
+	Now you have a plain HTML rendering of c99.php. 
+
+	Don't forget to delete the original c99.php from your site, right now!
+
+	
+
+	That's good enough for a gag, but you want the funky messages, too, right? Okay, do 
+
+	something like this after the page header..
+
+
+
+	if (!empty($_GET)) { 
+
+		// check the number of attempts..
+
+		if (!isset($_SESSION['haxor_hit'])) {
+
+			$_SESSION['haxor_hit'] = '0';
+
+		} else {
+
+			$_SESSION['haxor_hit']++;
+
+		}
+
+
+
+		$attempts = @$_SESSION['haxor_hit'];
+
+
+
+		if ($attempts > 0) {	// second attempt. fool!
+
+
+
+			// echo Big "GO AWAY" message here
+
+			exit;
+
+
+
+		} else { // first click on something active..
+
+
+
+			// echo standard joke message here
+
+			// don't exit page - let c99 show underneath
+
+		}
+
+	}
+
+
+
+	TADA!
+
+
+
+	To maximise the gag, don't forget to add lots of juicy extras into the 
+
+	directory, like mock password files and handy-looking tools, etc. Also, set 
+
+	security to OFF, and log in as root. This way when the h4x0r sees your c99, 
+
+	he will practically wet himself,  thinking he has hit the mother-lode, and 
+
+	now has total control of your server..
+
+
+
+		.. until he clicks something! lol
+
+
+
+	;o)
+
+	(or
+
+
+
+-->
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<meta http-equiv="Content-Language" content="en-us">
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<title>corz.org - c99shell</title>
+
+<style type="text/css" media="screen">/*<![CDATA[*/<!--TD { FONT-SIZE: 8pt; COLOR: #ebebeb; FONT-FAMILY: verdana;}BODY { scrollbar-face-color: #800000; scrollbar-shadow-color: #101010; scrollbar-highlight-color: #101010; scrollbar-3dlight-color: #101010; scrollbar-darkshadow-color: #101010; scrollbar-track-color: #101010; scrollbar-arrow-color: #101010; font-family: Verdana;}TD.header { FONT-WEIGHT: normal; FONT-SIZE: 10pt; BACKGROUND: #7d7474; COLOR: white; FONT-FAMILY: verdana;}A { FONT-WEIGHT: normal; COLOR: #dadada; FONT-FAMILY: verdana; TEXT-DECORATION: none;}A:unknown { FONT-WEIGHT: normal; COLOR: #ffffff; FONT-FAMILY: verdana; TEXT-DECORATION: none;}A.Links { COLOR: #ffffff; TEXT-DECORATION: none;}A.Links:unknown { FONT-WEIGHT: normal; COLOR: #ffffff; TEXT-DECORATION: none;}A:hover { COLOR: #ffffff; TEXT-DECORATION: underline;}.skin0{position:absolute; width:200px; border:2px solid black; background-color:menu; font-family:Verdana; line-height:20px; cursor:default; visibility:hidden;;}.skin1{cursor: default; font: menutext; position: absolute; width: 145px; background-color: menu; border: 1 solid buttonface;visibility:hidden; border: 2 outset buttonhighlight; font-family: Verdana,Geneva, Arial; font-size: 10px; color: black;}.menuitems{padding-left:15px; padding-right:10px;;}input{background-color: #800000; font-size: 8pt; color: #FFFFFF; font-family: Tahoma; border: 1 solid #666666;}textarea{background-color: #800000; font-size: 8pt; color: #FFFFFF; font-family: Tahoma; border: 1 solid #666666;}button{background-color: #800000; font-size: 8pt; color: #FFFFFF; font-family: Tahoma; border: 1 solid #666666;}select{background-color: #800000; font-size: 8pt; color: #FFFFFF; font-family: Tahoma; border: 1 solid #666666;}option {background-color: #800000; font-size: 8pt; color: #FFFFFF; font-family: Tahoma; border: 1 solid #666666;}iframe {background-color: #800000; font-size: 8pt; color: #FFFFFF; font-family: Tahoma; border: 1 solid #666666;}p {MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; LINE-HEIGHT: 150%}blockquote{ font-size: 8pt; font-family: Courier, Fixed, Arial; border : 8px solid #A9A9A9; padding: 1em; margin-top: 1em; margin-bottom: 5em; margin-right: 3em; margin-left: 4em; background-color: #B7B2B0;}body,td,th { font-family: verdana; color: #d9d9d9; font-size: 11px;}body { background-color: #000000;}//-->/*]]>*/</style>
+
+</head><body bottommargin="0" leftmargin="0" topmargin="0" rightmargin="0" bgcolor="#000000" marginheight="0" marginwidth="0" text="#ffffff"><div style="display:none"><script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+_qevents.push({
+qacct:"p-0cfM8Oh7M9bVQ"
+});
+</script>
+<noscript>
+<img src="//pixel.quantserve.com/pixel/p-0cfM8Oh7M9bVQ.gif" border="0" height="1" width="1" alt=""/>
+</noscript></div>
+
+<center>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" bordercolor="#c0c0c0" cellpadding="5" cellspacing="0" height="1" width="100%">
+
+<tbody>
+
+<tr>
+
+<th bordercolor="#C0C0C0" colspan="2" height="15" nowrap="nowrap" valign="top" width="100%">
+
+<p>
+
+<font face="Webdings" size="6">
+
+<b>!
+
+</b>
+
+</font>
+
+<a href="#">
+
+<font face="Verdana" size="5">
+
+<b>C99Shell v. 1.0 beta (21.05.2005)
+
+</b>
+
+</font>
+
+</a>
+
+<font face="Webdings" size="6">
+
+<b>!
+
+</b>
+
+</font>
+
+</p>
+
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+<p align="left">
+
+<b>Software:&nbsp;Apache/2.2.4 (Unix) mod_ssl/2.2.4 OpenSSL/0.9.8d DAV/2 
+
+<a href="?foo=phpinfo" target="_blank">
+
+<b>
+
+<u>PHP/5.2.3
+
+</u>
+
+</b>
+
+</a>
+
+</b>&nbsp;
+
+</p>
+
+<p align="left">
+
+<b>uname -a:&nbsp;Linux oshi 2.4.33.3 #1 Fri Sep 1 01:48:52 CDT 2006 i586
+
+</b>&nbsp;
+
+</p>
+
+<p align="left">
+
+<b>uid=0(root) gid=0(root) groups=0(root),0(root),0(root)
+
+</b>&nbsp;
+
+</p>
+
+<p align="left">
+
+<b>Safe-mode:&nbsp;
+
+<font color="green">OFF (not secure)
+
+</font>
+
+</b>
+
+</p>
+
+<p align="left">
+
+<a href="?foo=ls&amp;d=%2F&amp;sort=0a">
+
+<b>/
+
+</b>
+
+</a>
+
+<a href="?foo=ls&amp;d=%2Fhome%2F&amp;sort=0a">
+
+<b>home/
+
+</b>
+
+</a>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2F&amp;sort=0a">
+
+<b>sites/
+
+</b>
+
+</a>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2F&amp;sort=0a">
+
+<b>corz.org/
+
+</b>
+
+</a>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2F&amp;sort=0a">
+
+<b>httpdocs/
+
+</b>
+
+</a>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2F&amp;sort=0a">
+
+<b>corz/
+
+</b>
+
+</a>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F&amp;sort=0a">
+
+<b>scripts/
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;
+
+<b>
+
+<font color="white">drwxr-xr-x
+
+</font>
+
+</b>
+
+<br>
+
+<b>Free 9.02 GB of 9.54 GB (94.56%)
+
+</b>
+
+<br>
+
+<a href="#">
+
+<img src="img/c99_files/c99_013.gif" alt="Home" border="0" height="20" width="20">
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="#" onclick="history.back(1)">
+
+<img src="img/c99_files/c99_007.gif" alt="Back" border="0" height="20" width="20">
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="#" onclick="history.go(1)">
+
+<img src="img/c99_files/c99_010.gif" alt="Forward" border="0" height="20" width="20">
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz&amp;sort=0a">
+
+<img src="img/c99_files/c99_003.gif" alt="UPDIR" border="0" height="20" width="20">
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="">
+
+<img src="img/c99_files/c99_016.gif" alt="Refresh" border="0" height="20" width="17">
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=search&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<img src="img/c99_files/c99_018.gif" alt="Search" border="0" height="20" width="20">
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=fsbuff&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<img src="img/c99_files/c99_017.gif" alt="Buffer" border="0" height="20" width="20">
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=encoder&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>Encoder
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=bind&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>Bind
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=ps_aux&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>Proc.
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=ftpquickbrute&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>FTP brute
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=security&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>Sec.
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=sql&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>SQL
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=eval&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>PHP-code
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=feedback&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>Feedback
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="?foo=selfremove">
+
+<b>Self remove
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="#" onclick="if (confirm('Are you sure?')) window.close()">
+
+<b>Logout
+
+</b>
+
+</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+</p>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<br>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" cellpadding="5" cellspacing="0" width="100%">
+
+<tbody>
+
+<tr>
+
+<td valign="top" width="100%">
+
+<center>
+
+<b>Owned by (or
+
+</b>
+
+</center>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<br>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" cellpadding="5" cellspacing="0" width="100%">
+
+<tbody>
+
+<tr>
+
+<td valign="top" width="100%">
+
+<center>
+
+<b>Listing directory (39 files and 1 directories):
+
+</b>
+
+</center>
+
+<br>
+
+<table bordercolorlight="#333333" bgcolor="#333333" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+<tbody>
+
+<tr>
+
+
+
+<td>
+
+<b>Name
+
+</b>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F&amp;sort=0d">
+
+<img src="img/c99_files/c99_002.gif" alt="Asc." border="0" height="9" width="14">
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F&amp;sort=1a">
+
+<b>Size
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F&amp;sort=2a">
+
+<b>Modify
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F&amp;sort=3a">
+
+<b>Owner/Group
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F&amp;sort=4a">
+
+<b>Perms
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<b>Action
+
+</b>
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_015.gif" border="0" height="16" width="19">&nbsp;
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">.
+
+</a>
+
+</td>
+
+
+
+<td>LINK
+
+</td>
+
+
+
+<td>19.08.2008 10:28:48
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=.&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">drwxr-xr-x
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=d&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F.">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<input name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/." type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_004.gif" border="0" height="16" width="19">&nbsp;
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz&amp;sort=0a">..
+
+</a>
+
+</td>
+
+
+
+<td>LINK
+
+</td>
+
+
+
+<td>04.05.2008 00:35:37
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=..&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">drwxrwxrwx
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=d&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F..">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<input name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/.." type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_015.gif" border="0" height="16" width="19">&nbsp;
+
+<a href="?foo=ls&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2Fjs&amp;sort=0a">[js]
+
+</a>
+
+</td>
+
+
+
+<td>DIR
+
+</td>
+
+
+
+<td>12.06.2006 11:55:39
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=js&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">drwxr-xr-x
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=d&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2Fjs">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<input name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/js" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_008.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=.corzoogles&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">.corzoogles
+
+</a>
+
+</td>
+
+
+
+<td>28 B
+
+</td>
+
+
+
+<td>19.02.2005 06:52:11
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=.corzoogles&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrwxrwx
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=.corzoogles&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=.corzoogles&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=.corzoogles&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/.corzoogles" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_011.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=.ht_passwd&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">.ht_passwd
+
+</a>
+
+</td>
+
+
+
+<td>41 B
+
+</td>
+
+
+
+<td>15.03.2008 02:00:48
+
+</td>
+
+
+
+<td>root/root
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=.ht_passwd&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=.ht_passwd&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=.ht_passwd&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=.ht_passwd&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/.ht_passwd" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_009.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=.htaccess&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">.htaccess
+
+</a>
+
+</td>
+
+
+
+<td>546 B
+
+</td>
+
+
+
+<td>14.06.2008 10:04:31
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=.htaccess&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=.htaccess&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=.htaccess&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=.htaccess&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/.htaccess" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=base64img.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">base64img.php
+
+</a>
+
+</td>
+
+
+
+<td>16.84 KB
+
+</td>
+
+
+
+<td>20.03.2006 18:27:34
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=base64img.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rw-rw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=base64img.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=base64img.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=base64img.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/base64img.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=c99.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">
+
+<font color="yellow">c99.php
+
+</font>
+
+</a>
+
+</td>
+
+
+
+<td>153.91 KB
+
+</td>
+
+
+
+<td>19.08.2008 10:30:04
+
+</td>
+
+
+
+<td>root/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=c99.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=c99.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=c99.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=c99.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/c99.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=comment-pages.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">comment-pages.php
+
+</a>
+
+</td>
+
+
+
+<td>2.12 KB
+
+</td>
+
+
+
+<td>20.10.2007 10:19:21
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=comment-pages.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=comment-pages.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=comment-pages.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=comment-pages.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/comment-pages.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=corzoogle-hacked.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">corzoogle-hacked.php
+
+</a>
+
+</td>
+
+
+
+<td>119.29 KB
+
+</td>
+
+
+
+<td>02.05.2008 09:40:32
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=corzoogle-hacked.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=corzoogle-hacked.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=corzoogle-hacked.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=corzoogle-hacked.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/corzoogle-hacked.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=currency-converter.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">currency-converter.php
+
+</a>
+
+</td>
+
+
+
+<td>1.14 KB
+
+</td>
+
+
+
+<td>12.06.2006 12:01:15
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=currency-converter.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=currency-converter.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=currency-converter.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=currency-converter.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/currency-converter.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=current-date-time.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">current-date-time.php
+
+</a>
+
+</td>
+
+
+
+<td>262 B
+
+</td>
+
+
+
+<td>26.10.2007 19:20:52
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=current-date-time.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=current-date-time.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=current-date-time.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=current-date-time.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/current-date-time.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=debug-report%2Binit.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">debug-report+init.php
+
+</a>
+
+</td>
+
+
+
+<td>784 B
+
+</td>
+
+
+
+<td>07.11.2007 12:01:37
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=debug-report%2Binit.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=debug-report%2Binit.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=debug-report%2Binit.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=debug-report%2Binit.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/debug-report+init.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=debug-report.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">debug-report.php
+
+</a>
+
+</td>
+
+
+
+<td>3.72 KB
+
+</td>
+
+
+
+<td>29.04.2008 23:06:18
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=debug-report.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=debug-report.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=debug-report.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=debug-report.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/debug-report.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=error.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">error.php
+
+</a>
+
+</td>
+
+
+
+<td>129 B
+
+</td>
+
+
+
+<td>20.03.2006 18:27:28
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=error.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rw-rw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=error.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=error.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=error.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/error.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=eval.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">eval.php
+
+</a>
+
+</td>
+
+
+
+<td>976 B
+
+</td>
+
+
+
+<td>26.10.2007 19:26:24
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=eval.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=eval.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=eval.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=eval.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/eval.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=font-test.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">font-test.php
+
+</a>
+
+</td>
+
+
+
+<td>2.85 KB
+
+</td>
+
+
+
+<td>20.03.2006 18:27:29
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=font-test.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rw-rw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=font-test.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=font-test.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=font-test.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/font-test.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=gd-img-types.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">gd-img-types.php
+
+</a>
+
+</td>
+
+
+
+<td>768 B
+
+</td>
+
+
+
+<td>16.09.2007 20:38:45
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=gd-img-types.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=gd-img-types.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=gd-img-types.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=gd-img-types.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/gd-img-types.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=include.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">include.php
+
+</a>
+
+</td>
+
+
+
+<td>53 B
+
+</td>
+
+
+
+<td>06.04.2008 14:30:56
+
+</td>
+
+
+
+<td>root/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=include.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=include.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=include.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=include.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/include.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=info.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">info.php
+
+</a>
+
+</td>
+
+
+
+<td>72 B
+
+</td>
+
+
+
+<td>20.03.2006 18:27:28
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=info.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rw-rw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=info.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=info.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=info.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/info.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=magic-quotes.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">magic-quotes.php
+
+</a>
+
+</td>
+
+
+
+<td>186 B
+
+</td>
+
+
+
+<td>26.09.2007 15:28:29
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=magic-quotes.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=magic-quotes.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=magic-quotes.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=magic-quotes.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/magic-quotes.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=mail-simple.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">mail-simple.php
+
+</a>
+
+</td>
+
+
+
+<td>171 B
+
+</td>
+
+
+
+<td>15.11.2007 14:49:48
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=mail-simple.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=mail-simple.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=mail-simple.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=mail-simple.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/mail-simple.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=mail.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">mail.php
+
+</a>
+
+</td>
+
+
+
+<td>1023 B
+
+</td>
+
+
+
+<td>15.11.2007 14:48:38
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=mail.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=mail.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=mail.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=mail.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/mail.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=omail.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">omail.php
+
+</a>
+
+</td>
+
+
+
+<td>871 B
+
+</td>
+
+
+
+<td>15.04.2008 11:33:13
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=omail.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=omail.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=omail.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=omail.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/omail.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=osinfo.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">osinfo.php
+
+</a>
+
+</td>
+
+
+
+<td>1.29 KB
+
+</td>
+
+
+
+<td>05.04.2008 17:36:34
+
+</td>
+
+
+
+<td>root/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=osinfo.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=osinfo.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=osinfo.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=osinfo.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/osinfo.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=outward-port-probe.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">outward-port-probe.php
+
+</a>
+
+</td>
+
+
+
+<td>4.02 KB
+
+</td>
+
+
+
+<td>16.11.2007 09:34:01
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=outward-port-probe.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=outward-port-probe.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=outward-port-probe.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=outward-port-probe.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/outward-port-probe.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=php-version.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">php-version.php
+
+</a>
+
+</td>
+
+
+
+<td>124 B
+
+</td>
+
+
+
+<td>26.09.2007 15:26:08
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=php-version.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=php-version.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=php-version.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=php-version.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/php-version.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_005.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=php.ini&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">php.ini
+
+</a>
+
+</td>
+
+
+
+<td>506 B
+
+</td>
+
+
+
+<td>27.06.2007 09:37:00
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=php.ini&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=php.ini&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=php.ini&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=php.ini&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/php.ini" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=quickconf.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">quickconf.php
+
+</a>
+
+</td>
+
+
+
+<td>1.43 KB
+
+</td>
+
+
+
+<td>24.10.2007 08:08:08
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=quickconf.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=quickconf.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=quickconf.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=quickconf.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/quickconf.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=regex.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">regex.php
+
+</a>
+
+</td>
+
+
+
+<td>1.26 KB
+
+</td>
+
+
+
+<td>20.03.2006 18:27:34
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=regex.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rw-rw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=regex.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=regex.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=regex.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/regex.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=remote+user.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">remote user.php
+
+</a>
+
+</td>
+
+
+
+<td>97 B
+
+</td>
+
+
+
+<td>14.07.2008 17:58:21
+
+</td>
+
+
+
+<td>root/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=remote+user.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=remote+user.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=remote+user.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=remote+user.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/remote user.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=safe-test.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">safe-test.php
+
+</a>
+
+</td>
+
+
+
+<td>394 B
+
+</td>
+
+
+
+<td>26.10.2007 19:18:17
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=safe-test.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=safe-test.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=safe-test.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=safe-test.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/safe-test.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=server-version.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">server-version.php
+
+</a>
+
+</td>
+
+
+
+<td>1.19 KB
+
+</td>
+
+
+
+<td>21.09.2007 18:43:14
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=server-version.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=server-version.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=server-version.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=server-version.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/server-version.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=session-view.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">session-view.php
+
+</a>
+
+</td>
+
+
+
+<td>4.18 KB
+
+</td>
+
+
+
+<td>18.05.2008 01:03:55
+
+</td>
+
+
+
+<td>root/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=session-view.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=session-view.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=session-view.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=session-view.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/session-view.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=shell.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">shell.php
+
+</a>
+
+</td>
+
+
+
+<td>2.55 KB
+
+</td>
+
+
+
+<td>06.04.2008 14:25:46
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=shell.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=shell.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=shell.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=shell.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/shell.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=sourceview.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">sourceview.php
+
+</a>
+
+</td>
+
+
+
+<td>406 B
+
+</td>
+
+
+
+<td>20.03.2006 18:27:34
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=sourceview.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rw-rw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=sourceview.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=sourceview.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=sourceview.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/sourceview.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=space.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">space.php
+
+</a>
+
+</td>
+
+
+
+<td>69 B
+
+</td>
+
+
+
+<td>27.09.2007 07:50:13
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=space.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=space.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=space.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=space.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/space.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=test-valid-email.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">test-valid-email.php
+
+</a>
+
+</td>
+
+
+
+<td>1.35 KB
+
+</td>
+
+
+
+<td>18.11.2007 18:03:04
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=test-valid-email.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=test-valid-email.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=test-valid-email.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=test-valid-email.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/test-valid-email.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=test.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">test.php
+
+</a>
+
+</td>
+
+
+
+<td>116 B
+
+</td>
+
+
+
+<td>27.09.2007 08:20:26
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=test.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rwxrw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=test.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=test.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=test.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/test.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=time-diff.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">time-diff.php
+
+</a>
+
+</td>
+
+
+
+<td>1.2 KB
+
+</td>
+
+
+
+<td>28.10.2007 09:54:00
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=time-diff.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="white">-rwxr--r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=time-diff.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=time-diff.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=time-diff.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/time-diff.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td>
+
+<img src="img/c99_files/c99_006.gif" border="0">&nbsp;
+
+<a href="?foo=f&amp;f=xt.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts&amp;">xt.php
+
+</a>
+
+</td>
+
+
+
+<td>2.3 KB
+
+</td>
+
+
+
+<td>20.03.2006 18:27:28
+
+</td>
+
+
+
+<td>/adm
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=chmod&amp;f=xt.php&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>
+
+<font color="green">-rw-rw-r--
+
+</font>
+
+</b>
+
+</a>
+
+</td>
+
+
+
+<td>
+
+<a href="?foo=f&amp;f=xt.php&amp;ft=info&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_014.gif" alt="Info" border="0" height="16" width="16">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=xt.php&amp;ft=edit&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_019.gif" alt="Change" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<a href="?foo=f&amp;f=xt.php&amp;ft=download&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<img src="img/c99_files/c99_012.gif" alt="Download" border="0" height="16" width="19">
+
+</a>&nbsp;
+
+<input id="ls_dir[]" name="actbox[]" value="/home/sites/corz.org/httpdocs/corz/scripts/xt.php" type="checkbox">
+
+</td>
+
+
+
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+<hr noshade="noshade" size="1">
+
+<form action="?foo=cmd" method="get">
+
+<p align="right">
+
+<b>
+
+<img src="img/c99_files/c99.gif" border="0">
+
+<select name="act">
+
+<option value="ls">With selected:
+
+</option>
+
+<option value="delete">Delete
+
+</option>
+
+<option value="chmod">Change-mode
+
+</option>
+
+<option value="cut">Cut
+
+</option>
+
+<option value="copy">Copy
+
+</option>
+
+<option value="unselect">Unselect
+
+</option>
+
+</select>&nbsp;
+
+<input value="Confirm" type="submit">
+
+</b>
+
+</p>
+
+</form>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<a bookmark="minipanel">
+
+<br>
+
+</a>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" cellpadding="5" cellspacing="0" height="1" width="100%">
+
+
+
+<tbody>
+
+<tr>
+
+<td colspan="2" height="1" valign="top" width="100%">
+
+<p align="center">
+
+<b>:: 
+
+<a href="?foo=cmd&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>Command execute
+
+</b>
+
+</a> ::
+
+</b>
+
+</p>
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>Enter: 
+
+</b>
+
+<form action="?foo=cmd" method="get">
+
+<input name="act" value="cmd" type="hidden">
+
+<input name="d" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="hidden">
+
+<input name="cmd" size="50" value="" type="text">
+
+<input name="cmd_txt" value="1" type="hidden">&nbsp;
+
+<input name="submit" value="Execute" type="submit">
+
+</form>
+
+</center>
+
+</td>
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>Select: 
+
+</b>
+
+<form action="?foo=cmd" method="get">
+
+<input name="act" value="cmd" type="hidden">
+
+<input name="d" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="hidden">
+
+<select name="cmd">
+
+<option value="ls -la">-----------------------------------------------------------
+
+</option>
+
+<option value="find / -type f -perm -04000 -ls">find all suid files
+
+</option>
+
+<option value="find . -type f -perm -04000 -ls">find suid files in current dir
+
+</option>
+
+<option value="find / -type f -perm -02000 -ls">find all sgid files
+
+</option>
+
+<option value="find . -type f -perm -02000 -ls">find sgid files in current dir
+
+</option>
+
+<option value="find / -type f -name config.inc.php">find config.inc.php files
+
+</option>
+
+<option value="find / -type f -name &quot;config*&quot;">find config* files
+
+</option>
+
+<option value="find . -type f -name &quot;config*&quot;">find config* files in current dir
+
+</option>
+
+<option value="find / -perm -2 -ls">find all writable directories and files
+
+</option>
+
+<option value="find . -perm -2 -ls">find all writable directories and files in current dir
+
+</option>
+
+<option value="find / -type f -name service.pwd">find all service.pwd files
+
+</option>
+
+<option value="find . -type f -name service.pwd">find service.pwd files in current dir
+
+</option>
+
+<option value="find / -type f -name .htpasswd">find all .htpasswd files
+
+</option>
+
+<option value="find . -type f -name .htpasswd">find .htpasswd files in current dir
+
+</option>
+
+<option value="find / -type f -name .bash_history">find all .bash_history files
+
+</option>
+
+<option value="find . -type f -name .bash_history">find .bash_history files in current dir
+
+</option>
+
+<option value="find / -type f -name .fetchmailrc">find all .fetchmailrc files
+
+</option>
+
+<option value="find . -type f -name .fetchmailrc">find .fetchmailrc files in current dir
+
+</option>
+
+<option value="lsattr -va">list file attributes on a Linux second extended file system
+
+</option>
+
+<option value="netstat -an | grep -i listen">show opened ports
+
+</option>
+
+</select>
+
+<input name="cmd_txt" value="1" type="hidden">&nbsp;
+
+<input name="submit" value="Execute" type="submit">
+
+</form>
+
+</center>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<a bookmark="minipanel">
+
+<br>
+
+
+
+</a>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" cellpadding="5" cellspacing="0" height="1" width="100%">
+
+
+
+<tbody>
+
+<tr>
+
+ 
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>:: 
+
+<a href="?foo=search&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts%2F">
+
+<b>Search
+
+</b>
+
+</a> ::
+
+</b>
+
+<form method="get">
+
+<input name="act" value="search" type="hidden">
+
+<input name="d" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="hidden">
+
+<input name="search_name" size="29" value="(.*)" type="text">&nbsp;
+
+<input name="search_name_regexp" value="1" checked="checked" type="checkbox"> - regexp&nbsp;
+
+<input name="submit" value="Search" type="submit">
+
+</form>
+
+</center>
+
+<p>
+
+</p>
+
+</td>
+
+ 
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>:: 
+
+<a href="?foo=upload&amp;d=%2Fhome%2Fsites%2Fcorz.org%2Fhttpdocs%2Fcorz%2Fscripts">
+
+<b>Upload
+
+</b>
+
+</a> ::
+
+</b>
+
+<form method="get" enctype="multipart/form-data">
+
+<input name="act" value="upload" type="hidden">
+
+<input name="uploadfile" type="file">
+
+<input name="miniform" value="1" type="hidden">&nbsp;
+
+<input name="submit" value="Upload" type="submit">
+
+<br>
+
+<font color="red">[ Read-Only ]
+
+</font>
+
+</form>
+
+</center>
+
+</td>
+
+
+
+</tr>
+
+
+
+</tbody>
+
+</table>
+
+
+
+<a bookmark="minipanel">
+
+<br>
+
+</a>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" cellpadding="5" cellspacing="0" height="1" width="100%">
+
+<tbody>
+
+<tr>
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>:: Make Dir ::
+
+</b>
+
+<form method="get">
+
+<input name="act" value="mkdir" type="hidden">
+
+<input name="d" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="hidden">
+
+<input name="mkdir" size="50" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="text">&nbsp;
+
+<input value="Create" type="submit">
+
+<br>
+
+<font color="red">[ Read-Only ]
+
+</font>
+
+</form>
+
+</center>
+
+</td>
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>:: Make File ::
+
+</b>
+
+<form method="get">
+
+<input name="act" value="mkfile" type="hidden">
+
+<input name="d" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="hidden">
+
+<input name="mkfile" size="50" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="text">
+
+<input name="ft" value="edit" type="hidden">&nbsp;
+
+<input value="Create" type="submit">
+
+<br>
+
+<font color="red">[ Read-Only ]
+
+</font>
+
+</form>
+
+</center>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<a bookmark="minipanel">
+
+<br>
+
+</a>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" cellpadding="5" cellspacing="0" height="1" width="100%">
+
+<tbody>
+
+<tr>
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>:: Go Dir ::
+
+</b>
+
+<form action="#">
+
+<input name="act" value="ls" type="hidden">
+
+<input name="d" size="50" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="text">&nbsp;
+
+<input value="Go" type="submit">
+
+</form>
+
+</center>
+
+</td>
+
+<td height="1" valign="top" width="50%">
+
+<center>
+
+<b>:: Go File ::
+
+</b>
+
+<form action="#">
+
+<input name="act" value="gofile" type="hidden">
+
+<input name="d" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="hidden">
+
+<input name="f" size="50" value="/home/sites/corz.org/httpdocs/corz/scripts/" type="text">&nbsp;
+
+<input value="Go" type="submit">
+
+</form>
+
+</center>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+<a bookmark="minipanel">
+
+<br>
+
+</a>
+
+<table style="border-collapse: collapse;" bordercolordark="#666666" bordercolorlight="#c0c0c0" bgcolor="#333333" border="1" cellpadding="0" cellspacing="0" height="1" width="100%">
+
+<tbody>
+
+<tr>
+
+<td height="1" valign="top" width="990">
+
+<p align="center">
+
+<b>--[ c99shell v. 1.0 beta (21.05.2005) 
+
+<a href="?foo=about">
+
+<u>
+
+<b>powered by
+
+</b>
+
+</u>
+
+</a> Captain Crunch Security Team | 
+
+<a href="http://-ccteam.ru/">
+
+<font color="#ff0000">http://-ccteam.ru
+
+</font>
+
+</a>
+
+<font color="#ff0000">
+
+</font> | Generation time: 0.3502 ]--
+
+</b>
+
+</p>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+</center>
+
+<style type="text/css">html { padding-top: 26px; } #xt_auth_iframe { position: fixed; top: 0; left: 0; background: transparent; }</style><iframe id="xt_auth_iframe" allowTransparency="true" scrolling="no" frameBorder="0" style="width: 100%; border: 0; height: 26px;" src="https://xtgem.com/__xt_authbar?data=eyJ1cmwiOiJodHRwOlwvXC9zYWxpbTk5Lnh0Z2VtLmNvbVwvYzk5LnBocD9kPVwvaG9tZVwvc2l0ZXNcL2Nvcnoub3JnXC9odHRwZG9jc1wvY29yelwvc2NyaXB0cyZmPS5odF9wYXNzd2QmZm9vPWYiLCJsb2dnZWRfaW4iOmZhbHNlLCJkb21haW4iOiJzYWxpbTk5Lnh0Z2VtLmNvbSIsInBvc2l0aW9uIjp7ImFic29sdXRlIjoiZml4ZWQifX0="></iframe><br /><!----><noscript></noscript><script type="text/javascript"></script><textarea style="display:none;"></textarea><style></style><iframe style="display:none;width:0px;height:0px;border:0"></iframe><noframes></noframes><div id="st1600418618" style="z-index:999999;z-index:999999999;"><span id="a1600418618"><a href="http://xtgem.com/click?p=forums_catalog_web&amp;u=__urlaHR0cDovL3h0Z2VtLmNvbS9mb3J1bXM/YWQ9MQ==&amp;s=salim99.xtgem.com&amp;t=KhsdHB0aHggHAwsZBwMDDwEJAgUIBgh0cXQ=&amp;_is_adult=No&amp;_ad_pos=Bottom&amp;_ad_format=Plain&amp;_ad_url=c2FsaW05OS54dGdlbS5jb20vYzk5LnBocD9kPS9ob21lL3NpdGVzL2Nvcnoub3JnL2h0dHBkb2NzL2Nvcnovc2NyaXB0cyZmPS5odF9wYXNzd2QmZm9vPWY=&amp;_ad_networks=&amp;_ad_type=Banner" target="_blank"><img src="http://xtgem.com/images/forum/xtgem-forums.jpg" alt="XtGem Forum catalog"></a></span>        <style type="text/css">
+            #st1600418618 *
+            {
+                box-sizing:content-box !important;
+            }
+
+            #st1600418618 a
+            {
+                display: inline-block !important;
+                vertical-align: top;
+                padding: 0; margin: 0;
+            }
+
+            #st1600418618 a img
+            {
+                display: inline-block !important;
+            }
+
+            #st1600418618 ._xt_ad_close, #st1600418618 ._xt_ad_close_internal
+            {
+                display: inline-block !important;
+                position: absolute !important;
+                right: 6px !important;
+                width: 20px !important;
+                height: 20px !important;
+                cursor: pointer;
+            }
+
+            #st1600418618 ._xt_ad_close
+            {
+                top: -10px !important;
+            }
+
+            #st1600418618 ._xt_ad_close_internal
+            {
+                border: 6px solid transparent;
+                top: -12px !important;
+                right: 3px !important;
+            }
+
+            #a1600418618
+            {
+                display: inline-block !important;
+                position: relative !important;
+                text-align: left !important;
+                visibility: visible !important;
+                max-width: 100% !important;
+                max-height: none !important;
+                z-index:999999 !important;
+                z-index:999999999 !important;
+            }
+
+            #a1600418618 img
+            {
+                max-width: none !important;
+                max-height: none !important;
+                width: auto !important;
+                height: auto !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+            }
+
+            .fba1600418618
+            {
+                color: #1D1EEB !important;
+                background-color: #fff !important;
+                padding: 10px 50px 10px 10px !important;
+                border: 1px solid #2C2C2C !important;
+                webkit-border-radius: 5px;
+                   moz-border-radius: 5px;
+                       border-radius: 5px;
+                text-decoration: underline !important;
+                font-weight: bold !important;
+                display: block !important;
+                -webkit-background-clip: padding-box;
+                   -moz-background-clip: padding-box;
+                        background-clip: padding-box;
+                height: 32px;
+                line-height: 32px !important;
+                background-image: url(//xtgem.com/images/arrow.gif) !important;
+                background-repeat: no-repeat !important;
+                background-position: 95% center !important;
+            }
+
+            .fbp1600418618
+            {
+                position: relative !important;
+                display: block !important;
+                width:320px !important;
+                height:50px !important;
+                text-align:left !important;
+                background-color: #fff !important;
+                -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+                -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+                padding: 3px !important;
+                border-radius: 3px !important;
+                border: 1px solid #6bc135 !important;
+                text-decoration: underline !important;
+            }
+
+            .fbp_txt1600418618
+            {
+                position:relative !important;
+                display: inline-block !important;
+                min-width: 200px;
+                max-width: 200px;
+                height:50px !important;
+                vertical-align: top !important;
+                line-height:50px !important;
+                margin-left: 6px !important;
+                text-align: left !important;
+                color: #0274d4 !important;
+                font-family: Helvetica, Arial, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: bold !important;
+                text-decoration: underline !important;
+            }
+
+            .fbp_ico1600418618
+            {
+                position: absolute !important;
+                right: 10px !important;
+                height: 50px !important;
+                line-height: 46px !important;
+                vertical-align: top !important;
+                color: #6bc135 !important;
+            }
+
+            #st1600418618 .rolling_ad { display: none !important; }
+            #st1600418618 .rolling_ad.roll_on { display: inline-block !important; }
+        </style></div><!----><noscript></noscript><script type="text/javascript"></script><textarea style="display:none;"></textarea><style></style><iframe style="display:none;width:0px;height:0px;border:0"></iframe><noframes></noframes><script type="text/javascript" id="xtjs">                (function (){
+
+                    var d, b, ad_pos = false, el_rolling_ads, html, el, el_inner, el_new = '', i = 0;
+
+                    function xt_cache () {
+                        d = document;
+                        b = d.getElementsByTagName('body')[0];
+                        html = d.documentElement;
+                        el = d.getElementById( 'st1600418618' );
+                        el_inner = d.getElementById( 'a1600418618' );
+                        el_rolling_ads = el.getElementsByClassName( 'rolling_ad' );
+                    }
+
+                    xt_cache();
+
+                        if ( el.children[ 0 ] !== el_inner && el.children[ 0 ].tagName == "A" ) {
+
+                            for ( i = 1; i < el.children.length; i++ ) {
+                                el_new += el.children[i].outerHTML;
+                            }
+
+                            el.innerHTML = el_inner.outerHTML.split( '>' )[ 0 ] + '>' + el_new + '</span>';
+
+                            xt_cache();
+                        }
+                        else if ( el.offsetParent === null ) {
+                            b.insertBefore( el, b.firstChild );
+
+                            xt_cache();
+                            ad_pos = true;
+                        }
+
+                        if (d.getElementById('kosmos-banner')) {
+                            ad_pos = true;
+                        }
+
+                        el.style.display="block";
+                        el.style.textAlign="center";
+                        el.style.position="fixed";
+                        if ( ad_pos ) { el.style.top=10+"px"; el.style.bottom='auto'; } else { el.style.bottom=10+"px"; }
+                        el.style.left="0";
+                        el.style.right="0";
+                        el.style.height="1px";
+
+                        var el_imgs = el.getElementsByTagName( 'IMG' );
+                        for (i=0,len=el_imgs.length; i<len; i++) { el_imgs[i].onload = fix_height; }
+
+                        function fix_height () {
+                            el.style.marginBottom = el_inner.offsetHeight+"px";
+                            if ( ad_pos ) {
+                                html.style.paddingTop = el_inner.offsetHeight+9+"px";
+                            } else {
+                                html.style.paddingBottom = el_inner.offsetHeight+9+"px";
+                            }
+                        }
+
+                        setTimeout(function(){fix_height();},200);
+
+                        var closebutton = d.createElement('IMG');
+                            closebutton.src = '//xtgem.com/images/close2.png?v=0.01';
+                            closebutton.alt = '[x]';
+                            closebutton.setAttribute( 'class', '_xt_ad_close' );
+                            closebutton.onclick = function () { closebutton.setAttribute( 'style', 'display: none !important' ); el.style.position = 'static';  closebutton.onclick = null; html.style.paddingBottom = '0'; html.style.paddingTop = '0'; if ( d.getElementById('wr1600418618') ) { d.getElementById('wr1600418618').style.bottom = '0'; } };
+                            el_inner.appendChild(closebutton);
+
+                        // lets roll ads if needed
+                        if ( el_rolling_ads )
+                        {
+                            function roll_ads () {
+                                var i = 0,
+                                    len = el_rolling_ads.length,
+                                    curr_ad,
+                                    next_ad,
+                                    first_ad = el_rolling_ads[ 0 ];
+
+                                for ( ; i < len; i++) {
+                                    curr_ad = el_rolling_ads[ i ];
+                                    next_ad = el_rolling_ads[ i + 1 ] ? el_rolling_ads[ i + 1 ] : first_ad;
+
+                                    if ( curr_ad.className.indexOf( ' roll_on' ) !== -1 ) {
+                                        curr_ad.className = curr_ad.className.replace(' roll_on', '');
+                                        next_ad.className = next_ad.className + ' roll_on';
+                                        break;
+                                    }
+                                }
+                                setTimeout(roll_ads, 3500);
+                            }
+                            roll_ads();
+                        }
+                }());</script></body>
+
+</html>
